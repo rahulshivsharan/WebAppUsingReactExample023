@@ -1,25 +1,20 @@
 'use strict';
 
-import React, {Component} from 'react';
+import React from 'react';
 import ReactDom from 'react-dom';
 import {
-    Router,
+    BrowserRouter,
     Route,
-    browserHistory, 
-    IndexRoute    
-} from "react-router";
+    browserHistory
+} from "react-router-dom";
+
 import App from "./App";
-import Home from "./home";
-import Movies from './movies';
-import Cryptos from './cryptos';
+
+
 
 ReactDom.render((
-    <Router history={browserHistory}>
-        <Route path="/" component={App}>
-            <IndexRoute component={Home}/>
-            <Route path="/movies(/)" component={Movies} />
-            <Route path="/cryptos(/)" component={Cryptos} />
-        </Route>        
-    </Router>   
+    <BrowserRouter>
+        <Route path="/" component={App} />
+    </BrowserRouter>   
 ),document.querySelector("#app"));
 

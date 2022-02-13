@@ -31,7 +31,7 @@ const TopTvShowList = () => {
     useEffect(() => {
         var nextCount = count + 3;
         //console.log(`Current Count ${count}, next Count No. ${nextCount}`);        
-        if(tvShows  === null){            
+        if(tvShows  === null){  
             var showList = fetchedTVShowList.slice(count,nextCount);        
             getBatchTvShowDetails(showList).then((dataList) => {            
                 setTvShows(dataList);

@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const BASE_URL_IMDB_8 = "https://imdb8.p.rapidapi.com";
+const BASE_URL_IMDB_1 = "https://imdb-internet-movie-database-unofficial.p.rapidapi.com";
 const X_RAPID_API_KEY = "cb9d056906msh202db15fb23cdf9p1e99c4jsn7dd51c460112";
 const X_RAPID_API_HOST = "imdb8.p.rapidapi.com";
 
@@ -15,6 +16,11 @@ const setTvShowList = (tvList) =>{
 export const getFetchedTvShows = () =>{
     return tvShowList;
 };
+
+export const getMovieList = (movieName) => {
+    let url = BASE_URL_IMDB_1 + "/search/"+movieName;
+    return sendRequest(url, "GET", { "api" : "imdb1" });
+}
 
 export const getTopTvShows = () => {
     return new Promise((resolve, reject) => {

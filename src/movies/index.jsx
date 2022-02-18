@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import TopTvShowList from './TopTvShowList';
 import MovieSearch from "./MovieSearch";
+import MovieSearchTwo from "./MovieSearchTwo";
 
 class Movies extends Component{
     render(){
@@ -33,10 +34,19 @@ class Movies extends Component{
                             </div>
                         </div>
 
+                        <div className="row">
+                            <div className="col-md-12">
+                                <div className="list-group">
+                                    <Link className="list-group-item" to="/movies/search/hooks">Search Movies Using Reducer</Link>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <div className="col-md-10">                                                
                         <Route exact path="/movies/toptvshows" component={TopTvShowList} />
                         <Route exact path="/movies/search" component={MovieSearch} />
+                        <Route exact path="/movies/search/hooks" component={MovieSearchTwo} />
                     </div>
                 </div>                
             </BrowserRouter>   

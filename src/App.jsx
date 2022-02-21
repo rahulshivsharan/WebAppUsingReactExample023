@@ -6,6 +6,7 @@ import Header from "./header";
 import Home from "./home";
 import Movies from './movies';
 import Cryptos from './cryptos';
+import ReactHookTry from "./hookExample";
 
 class App extends Component {
     render(){
@@ -17,7 +18,8 @@ class App extends Component {
                         <div className="col-md-12">                        
                             <Route exact path="/" component={Home} />
                             <Route exact path="/movies" component={Movies} />
-                            <Route exact path="/cryptos" component={Cryptos} />                        
+                            <Route exact path="/cryptos" component={Cryptos} />
+                            <Route exact path="/hooktry" component={ReactHookTry} />                        
                         </div>
                     </div>
                 </div>

@@ -18,6 +18,9 @@ class Header extends Component {
 						<p className="navbar-text">
 						    <Link className="navbar-link" to="/cryptos">Crypto-Currencies</Link>
 						</p>
+						<p className="navbar-text">
+						    <Link className="navbar-link" to="/hooktry">React Hooks</Link>
+						</p>
 					</div>
 				</nav>
             </div>

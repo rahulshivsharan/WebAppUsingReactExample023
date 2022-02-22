@@ -1,9 +1,11 @@
 import React, { Fragment, useState, useEffect, useReducer } from 'react'; 
 
 const AdderExampleOne = () => {
-
-    const [numOne, setNumOne] = useState("");
-    const [numTwo, setNumTwo] = useState("");    
+    
+    const [stateObj, setStateObj] = useState({
+        "numOne" : "",
+        "numTwo" : ""
+    });    
     
     const [counterStyle, setCounterStyle] = useState({
         "fontSize" : "350px",
@@ -28,7 +30,8 @@ const AdderExampleOne = () => {
     });
 
     const submitForm = ()=>{
-        let total = parseInt(numOne) + parseInt(numTwo);
+        
+        let total = parseInt(stateObj.numOne) + parseInt(stateObj.numTwo);
         
         dispatch({ 
             "type" : "SUM",
@@ -46,8 +49,11 @@ const AdderExampleOne = () => {
                             className="form-control" 
                             id="numOneId" 
                             placeholder="Num One" 
-                            value={numOne}
-                            onChange={event => setNumOne(event.target.value)} />
+                            value={stateObj.numOne}
+                            onChange={event => setStateObj({
+                                "numOne" : event.target.value,
+                                "numTwo" : stateObj.numTwo  
+                            })} />
                 </div>
                 &nbsp;
                 <div className="form-group">
@@ -57,8 +63,13 @@ const AdderExampleOne = () => {
                             className="form-control" 
                             id="numTwoId" 
                             placeholder="Num Two"
-                            value={numTwo} 
-                            onChange={event => setNumTwo(event.target.value)} />
+                            value={stateObj.numTwo} 
+                            onChange={(event) =>{
+                                setStateObj({
+                                    "numOne" : stateObj.numOne,
+                                    "numTwo" : event.target.value
+                                });
+                            }}/>
                 </div>
                 &nbsp;
                 <button type="button" 

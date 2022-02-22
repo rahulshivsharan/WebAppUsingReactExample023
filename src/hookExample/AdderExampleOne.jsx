@@ -51,8 +51,8 @@ const AdderExampleOne = () => {
                             placeholder="Num One" 
                             value={stateObj.numOne}
                             onChange={event => setStateObj({
-                                "numOne" : event.target.value,
-                                "numTwo" : stateObj.numTwo  
+                                ...stateObj,  
+                                "numOne" : event.target.value
                             })} />
                 </div>
                 &nbsp;
@@ -66,7 +66,7 @@ const AdderExampleOne = () => {
                             value={stateObj.numTwo} 
                             onChange={(event) =>{
                                 setStateObj({
-                                    "numOne" : stateObj.numOne,
+                                    ...stateObj,
                                     "numTwo" : event.target.value
                                 });
                             }}/>

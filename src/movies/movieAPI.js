@@ -22,6 +22,11 @@ export const getMovieList = (movieName) => {
     return sendRequest(url, "GET", { "api" : "imdb1" });
 }
 
+export const searchMovieByTitle = (movieName) => {
+    let url = BASE_URL_IMDB_8 + "/title/find?q="+movieName;
+    return sendRequest(url, "GET", { "api" : "imdb8" });
+}
+
 export const getTopTvShows = () => {
     return new Promise((resolve, reject) => {
         var promiseList = [];
